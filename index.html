@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soft Aesthetic Todo List</title>
+  <link rel="stylesheet" href="style/custom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+  <!-- Background Decorations -->
+  <div class="bg-decoration">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+  </div>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <h1 class="app-title">
+          <img src="assets/img/star-icon.png" alt="Todo App Logo" class="app-logo">
+          Aplikasi-todolist
+        </h1>
+        <p class="app-subtitle">Capture your dreams with a soft touch ✨</p>
+      </div>
+    </header>
+
+    <!-- Add Todo Card -->
+    <div class="glass-card add-todo-card">
+      <div class="card-content">
+        <div class="input-group">
+          <div class="input-wrapper">
+            <input type="text" id="newTodoInput" class="soft-input" placeholder="Add a new dream..." aria-label="Add new todo">
+            <div class="input-glow"></div>
+          </div>
+          <button id="addTodoBtn" class="soft-btn primary">Add Dream <i class="bi bi-plus"></i></button>
+        </div>
+        <div id="errorMessage" class="error-message"></div>
+      </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="glass-card">
+      <div class="card-header">
+        <h2 class="card-title"><i class="bi bi-bar-chart"></i> Dream Stats</h2>
+      </div>
+      <div class="card-content">
+        <div class="stats-grid">
+          <div class="stat-card total">
+            <div class="stat-icon"><i class="bi bi-list"></i></div>
+            <div>
+              <div class="stat-number" id="totalCount">0</div>
+              <div class="stat-label">Total</div>
+            </div>
+          </div>
+          <div class="stat-card active">
+            <div class="stat-icon"><i class="bi bi-clock"></i></div>
+            <div>
+              <div class="stat-number" id="activeCount">0</div>
+              <div class="stat-label">Active</div>
+            </div>
+          </div>
+          <div class="stat-card completed">
+            <div class="stat-icon"><i class="bi bi-check-circle"></i></div>
+            <div>
+              <div class="stat-number" id="completedCount">0</div>
+              <div class="stat-label">Completed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Card -->
+    <div class="glass-card filter-card">
+      <div class="card-header">
+        <h2 class="card-title"><i class="bi bi-filter"></i> Filter Dreams</h2>
+      </div>
+      <div class="card-content">
+        <div class="filter-content">
+          <div class="search-wrapper">
+            <div class="search-input-wrapper">
+              <i class="bi bi-search search-icon"></i>
+              <input type="text" id="searchInput" class="search-input" placeholder="Search dreams..." aria-label="Search todos">
+            </div>
+          </div>
+          <div class="filter-buttons">
+            <input type="radio" id="filterAll" name="filter" value="all" class="filter-radio" checked>
+            <label for="filterAll" class="filter-btn"><i class="bi bi-list"></i> All <span class="filter-count" id="allCount">0</span></label>
+            <input type="radio" id="filterActive" name="filter" value="active" class="filter-radio">
+            <label for="filterActive" class="filter-btn"><i class="bi bi-clock"></i> Active <span class="filter-count" id="activeFilterCount">0</span></label>
+            <input type="radio" id="filterCompleted" name="filter" value="completed" class="filter-radio">
+            <label for="filterCompleted" class="filter-btn"><i class="bi bi-check-circle"></i> Completed <span class="filter-count" id="completedFilterCount">0</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Todo List Card -->
+    <div class="glass-card todo-list-card">
+      <div class="card-header">
+        <h2 class="card-title" id="listTitle">All Dreams</h2>
+      </div>
+      <div class="card-content">
+        <div id="todoList" class="todo-list"></div>
+        <div id="emptyState" class="empty-state">
+          <i class="bi bi-moon-stars empty-icon"></i>
+          <div class="empty-text"></div>
+          <div class="empty-subtext"></div>
+        </div>
+        <div id="dragHelp" class="drag-help"><i class="bi bi-arrows-move"></i> Drag to reorder your dreams!</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script/todo-app.js"></script>
+</body>
+</html>
